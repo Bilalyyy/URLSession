@@ -1,24 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O6g-xh-fAz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Basic-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BasicController" customModule="URLSession" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2d-R7-VKR">
+                                <rect key="frame" x="20" y="732" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <connections>
+                                    <action selector="btnDownload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="14C-ck-Sto"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yqj-L3-j8V">
+                                <rect key="frame" x="20" y="94" width="374" height="623"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I2d-R7-VKR" secondAttribute="bottom" constant="50" id="48e-ma-tcZ"/>
+                            <constraint firstItem="Yqj-L3-j8V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8AZ-IR-YYV"/>
+                            <constraint firstItem="Yqj-L3-j8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="C9Q-Sx-fLp"/>
+                            <constraint firstItem="I2d-R7-VKR" firstAttribute="leading" secondItem="Yqj-L3-j8V" secondAttribute="leading" id="DSP-xr-1GL"/>
+                            <constraint firstItem="I2d-R7-VKR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EcC-mF-P2a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yqj-L3-j8V" secondAttribute="trailing" constant="20" id="eHp-5c-ruq"/>
+                            <constraint firstItem="I2d-R7-VKR" firstAttribute="top" secondItem="Yqj-L3-j8V" secondAttribute="bottom" constant="15" id="o3Y-L6-6Qh"/>
+                            <constraint firstItem="I2d-R7-VKR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tx4-Si-sYk"/>
+                            <constraint firstItem="Yqj-L3-j8V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="znH-2E-Z6e"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Basic" image="square.and.arrow.down" catalog="system" id="8QK-9N-UOw"/>
+                    <connections>
+                        <outlet property="prBtn" destination="I2d-R7-VKR" id="5d0-fJ-iAU"/>
+                        <outlet property="prImage" destination="Yqj-L3-j8V" id="2KY-r5-WZZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1028" y="-470"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="X2S-ZS-p7X">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="O6g-xh-fAz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B6r-ub-OYO">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="XXo-af-B5s"/>
+                        <segue destination="fEp-bA-6Oa" kind="relationship" relationship="viewControllers" id="Hia-bN-BRi"/>
+                        <segue destination="d5a-sD-EFC" kind="relationship" relationship="viewControllers" id="VHa-60-YSi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u09-XN-x51" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1396" y="569"/>
+        </scene>
+        <!--@escaping-->
+        <scene sceneID="wbc-Ya-TMg">
+            <objects>
+                <viewController id="fEp-bA-6Oa" customClass="EscapingController" customModule="URLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Omn-WZ-7rG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2c-Sd-lO8">
+                                <rect key="frame" x="20" y="732" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <connections>
+                                    <action selector="btnDownload:" destination="fEp-bA-6Oa" eventType="touchUpInside" id="m1b-WH-3Ga"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cx9-rH-zeN">
+                                <rect key="frame" x="20" y="94" width="374" height="623"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F5D-y0-RK1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cx9-rH-zeN" firstAttribute="top" secondItem="F5D-y0-RK1" secondAttribute="top" constant="50" id="5iQ-57-5dk"/>
+                            <constraint firstItem="F5D-y0-RK1" firstAttribute="bottom" secondItem="t2c-Sd-lO8" secondAttribute="bottom" constant="50" id="EUV-xf-Jo3"/>
+                            <constraint firstItem="F5D-y0-RK1" firstAttribute="trailing" secondItem="cx9-rH-zeN" secondAttribute="trailing" constant="20" id="HVn-ez-Iey"/>
+                            <constraint firstItem="t2c-Sd-lO8" firstAttribute="leading" secondItem="cx9-rH-zeN" secondAttribute="leading" id="Ksq-3p-Enb"/>
+                            <constraint firstItem="t2c-Sd-lO8" firstAttribute="top" secondItem="cx9-rH-zeN" secondAttribute="bottom" constant="15" id="LjA-45-o6s"/>
+                            <constraint firstItem="t2c-Sd-lO8" firstAttribute="centerX" secondItem="Omn-WZ-7rG" secondAttribute="centerX" id="Pan-pF-niw"/>
+                            <constraint firstItem="cx9-rH-zeN" firstAttribute="leading" secondItem="F5D-y0-RK1" secondAttribute="leading" constant="20" id="fya-xz-fwh"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="@escaping" image="square.and.arrow.down" catalog="system" id="2af-ha-UKz"/>
+                    <connections>
+                        <outlet property="prBtn" destination="t2c-Sd-lO8" id="qNe-Pv-VIg"/>
+                        <outlet property="prImage" destination="cx9-rH-zeN" id="yZc-XD-D9M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPo-ab-EzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="569"/>
+        </scene>
+        <!--?Completion-->
+        <scene sceneID="pXR-lo-2Ij">
+            <objects>
+                <viewController id="d5a-sD-EFC" customClass="OptionalCompletionController" customModule="URLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gkz-wz-Jwi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGi-Zx-kbn">
+                                <rect key="frame" x="20" y="732" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <connections>
+                                    <action selector="btnDownload:" destination="d5a-sD-EFC" eventType="touchUpInside" id="fmr-Rb-tug"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNz-kT-WSe">
+                                <rect key="frame" x="20" y="94" width="374" height="623"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wg7-Hg-253"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GNz-kT-WSe" firstAttribute="top" secondItem="wg7-Hg-253" secondAttribute="top" constant="50" id="1dZ-qM-CDO"/>
+                            <constraint firstItem="LGi-Zx-kbn" firstAttribute="leading" secondItem="GNz-kT-WSe" secondAttribute="leading" id="Iud-Yh-kiZ"/>
+                            <constraint firstItem="wg7-Hg-253" firstAttribute="bottom" secondItem="LGi-Zx-kbn" secondAttribute="bottom" constant="50" id="Neq-gA-VQA"/>
+                            <constraint firstItem="GNz-kT-WSe" firstAttribute="leading" secondItem="wg7-Hg-253" secondAttribute="leading" constant="20" id="SX0-Bu-wcm"/>
+                            <constraint firstItem="LGi-Zx-kbn" firstAttribute="centerX" secondItem="Gkz-wz-Jwi" secondAttribute="centerX" id="dz3-bd-rUm"/>
+                            <constraint firstItem="wg7-Hg-253" firstAttribute="trailing" secondItem="GNz-kT-WSe" secondAttribute="trailing" constant="20" id="n5i-Ur-Ktj"/>
+                            <constraint firstItem="LGi-Zx-kbn" firstAttribute="top" secondItem="GNz-kT-WSe" secondAttribute="bottom" constant="15" id="vol-Y3-ojw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="?Completion" image="square.and.arrow.down" catalog="system" id="TR7-P9-wtf"/>
+                    <connections>
+                        <outlet property="prBtn" destination="LGi-Zx-kbn" id="4kf-j0-3NR"/>
+                        <outlet property="prImage" destination="GNz-kT-WSe" id="JDs-7V-0Wa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hS-Iu-XPA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1028" y="1647"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
