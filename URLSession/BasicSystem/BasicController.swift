@@ -22,9 +22,8 @@ class BasicController: UIViewController {
     }
 
     @IBAction func btnDownload(_ sender: Any) {
-        prBtn.isEnabled = false
-        
         guard let url = URL(string: urlStr) else {return}
+        prBtn.isEnabled = false
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 if let sData = data {

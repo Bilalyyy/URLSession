@@ -20,11 +20,13 @@ class EscapingController: UIViewController {
     
     
     @IBAction func btnDownload(_ sender: Any) {
-        prBtn.isEnabled = false
-        
         Downloader().getImage { image, Error in
-            self.prImage.image = image
-            print(Error ?? "")
+            if Error == nil {
+                self.prBtn.isEnabled = false
+                self.prImage.image = image
+            } else {
+                print(Error ?? "")
+            }
         }
     }
     

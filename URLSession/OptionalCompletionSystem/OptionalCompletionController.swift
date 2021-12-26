@@ -19,11 +19,13 @@ class OptionalCompletionController: UIViewController {
     
     
     @IBAction func btnDownload(_ sender: Any) {
-        prBtn.isEnabled = false
-        
         OptionalCompletionDownloader().getImage { image, error in
-            self.prImage.image = image
-            print(error ?? "")
+            if error == nil {
+                self.prBtn.isEnabled = false
+                self.prImage.image = image
+            } else {
+                print(error ?? "")
+            }
         }
     }
     
